@@ -1,45 +1,27 @@
-<form [formGroup]="form" class="d-flex flex-column gap-2">
-  <h4>Reactive Form</h4>
-  <!-- User name -->
-  <div class="form-group">
-    <label for="usrName" class="form-label">User Name</label>
-    <input
-      type="text"
-      name="userName"
-      class="form-control"
-      formControlName="userName"
-    />
-    <div
-      class="text-danger"
-      *ngIf="form.get('userName')?.invalid && form.get('userName')?.touched"
-    >
-      User Name is required
-    </div>
-  </div>
-  <!-- Password -->
-  <div class="form-group">
-    <label for="password" class="form-label">Password</label>
-    <input
-      type="password"
-      name="password"
-      class="form-control"
-      formControlName="password"
-    />
-    <div
-      class="text-danger"
-      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-    >
-      Password is required
-    </div>
-  </div>
-  <!-- Submit -->
-  <div class="form-group">
-    <button
-      (click)="onSubmit()"
-      [disabled]="!form.valid"
-      class="btn btn-primary"
-    >
-      Submit
-    </button>
-  </div>
-</form>
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form">
+      <div>
+        <mat-form-field color="warn">
+          <mat-label>Username</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

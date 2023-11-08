@@ -1,6 +1,7 @@
-import { Component, EventEmitter, NgModule, Output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../user';
+
 
 @Component({
   selector: 'app-reactive-form',
@@ -9,6 +10,8 @@ import { User } from '../user';
 })
 
 export class ReactiveFormComponent {
+  hide = true;
+
   @Output() user = new EventEmitter<User>()
   form = new FormGroup({
     userName: new FormControl('', Validators.required),
