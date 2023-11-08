@@ -4,13 +4,18 @@
       <div>
         <mat-form-field color="warn">
           <mat-label>Username</mat-label>
-          <input name="userName" matInput />
+          <input name="userName" formControlName="userName" matInput />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
           <mat-label>Enter your password</mat-label>
-          <input name="password" matInput [type]="hide ? 'password' : 'text'" />
+          <input
+            name="password"
+            formControlName="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+          />
           <button
             mat-icon-button
             matSuffix

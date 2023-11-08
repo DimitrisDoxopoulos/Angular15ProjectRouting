@@ -14,7 +14,7 @@ export class ReactiveFormComponent {
 
   @Output() user = new EventEmitter<User>()
   form = new FormGroup({
-    userName: new FormControl('', Validators.required),
+    userName: new FormControl('', [Validators.required, Validators.minLength(5)]),
     password: new FormControl('', Validators.required)
   })
 
