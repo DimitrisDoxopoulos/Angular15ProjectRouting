@@ -4,13 +4,13 @@
       <div>
         <mat-form-field color="warn">
           <mat-label>Username</mat-label>
-          <input matInput />
+          <input name="userName" matInput />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" />
+          <input name="password" matInput [type]="hide ? 'password' : 'text'" />
           <button
             mat-icon-button
             matSuffix
